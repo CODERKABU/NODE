@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!-- Bootstrap CDN -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <title>Admin Registration</title>
+</head>
+<body>
+  <div class="container mt-4">
+    <h2 class="text-center mb-4">Admin Registration</h2>
+
+    <% if (error) { %>
+      <div class="alert alert-danger text-center"><%= error %></div>
+    <% } %>
+
+    <form action="/register" method="POST" enctype="multipart/form-data">
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label>First Name</label>
+          <input type="text" name="firstName" class="form-control" required />
+        </div>
+        <div class="col-md-6 mb-3">
+          <label>Last Name</label>
+          <input type="text" name="lastName" class="form-control" required />
+        </div>
+      </div>
+
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label>Password</label>
+        <input type="password" name="password" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label>Mobile Number</label>
+        <input type="text" name="mobileNumber" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label>Country</label>
+        <input type="text" name="country" class="form-control" required />
+      </div>
+
+      <div class="mb-3">
+        <label>Gender</label><br />
+        <label><input type="radio" name="gender" value="Male" required /> Male</label>
+        <label class="ms-2"><input type="radio" name="gender" value="Female" /> Female</label>
+        <label class="ms-2"><input type="radio" name="gender" value="Other" /> Other</label>
+      </div>
+
+      <div class="mb-3">
+        <label>Hobbies</label><br />
+        <label><input type="checkbox" name="hobbies" value="Music" /> Music</label>
+        <label class="ms-2"><input type="checkbox" name="hobbies" value="Coding" /> Coding</label>
+        <label class="ms-2"><input type="checkbox" name="hobbies" value="Travelling" /> Travelling</label>
+      </div>
+
+      <div class="mb-3">
+        <label>Description</label>
+        <textarea name="description" class="form-control" rows="3"></textarea>
+      </div>
+
+      <div class="mb-3">
+        <label>Profile Image</label>
+        <input type="file" name="profileImage" class="form-control" />
+      </div>
+
+      <button class="btn btn-primary w-100">Register</button>
+
+      <div class="text-center mt-3">
+        Already registered? <a href="/signin">Login Here</a>
+      </div>
+      
+    </form>
+  </div>
+
+
+</body>
+</html>

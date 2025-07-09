@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <%- include('../header') %>
+  <title>Forgot Password</title>
+</head>
+<body>
+  <div class="container mt-5" style="max-width: 500px;">
+    <h3 class="text-center mb-4">Forgot Password</h3>
+
+    <% if (error) { %>
+      <div class="alert alert-danger"><%= error %></div>
+    <% } %>
+
+    <form action="/forgot-password" method="POST">
+      <div class="mb-3">
+        <label>Email</label>
+        <input type="email" name="email" class="form-control" required />
+      </div>
+      <button class="btn btn-primary w-100">Send OTP</button>
+    </form>
+
+    <div class="text-center mt-3">
+      <a href="/signin">Back to Login</a>
+    </div>
+  </div>
+
+  <%- include('../footer') %>
+</body>
+</html>
